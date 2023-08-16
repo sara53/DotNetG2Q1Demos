@@ -303,8 +303,8 @@
 // });
 
 // console.log(result);
-// var result = arr.findIndex((item, index) => {
-// 	return index;
+// var result = arr.find((item, index) => {
+// 	return item>35;
 // });
 // console.log(result);
 
