@@ -1,3 +1,12 @@
 1- install node js
 2- npm i -g typescript --> tsc --v
 3- tsc filename.ts -w (to run your typescript code)
+----
+1- npm i -g @angular/cli
+2- ng new projectName
+3-(ng serve) -- (ng serve -o) -- (npm Start)
+
+-------------
+ng g c component
+
+ng g c myFolder/footer --skip-tests
