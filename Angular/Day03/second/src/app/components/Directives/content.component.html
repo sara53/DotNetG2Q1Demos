@@ -1,0 +1,82 @@
+<div class="alert alert-dark p-5 text-center">
+  <div class="container">
+    <ng-template>
+      <section>
+        <h1>Content</h1>
+        <p *ngIf="flag; else myTemp" class="bg-light p-3 rounded mt-4 lead">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus
+          sapiente ullam sed tenetur laudantium numquam dolor porro, aliquam in
+          unde optio voluptatem officiis eveniet nesciunt reprehenderit odio.
+          Ad, omnis repellat.
+        </p>
+        <ng-template #myTemp>
+          <p class="bg-danger text-light p-3 rounded">This is anther P</p>
+        </ng-template>
+        <button (click)="toggle()" class="btn btn-outline-danger">
+          Toggle
+        </button>
+      </section>
+      <div
+        *ngFor="let product of products; let x = index"
+        class="bg-light p-3 mt-5 rounded"
+      >
+        <h1>{{ x }} : {{ product.productName }}</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia
+          sapiente eum ea esse voluptatem at ut ad placeat. Aperiam, ab.
+        </p>
+      </div>
+    </ng-template>
+
+    <ng-container [ngSwitch]="color">
+      <p *ngSwitchCase="'red'" class="bg-danger p-2 text-light rounded mb-1">
+        Your Fav Color is : red
+      </p>
+      <p *ngSwitchCase="'green'" class="bg-success p-2 text-light rounded mb-1">
+        Your Fav Color is : green
+      </p>
+      <p *ngSwitchCase="'blue'" class="bg-primary p-2 text-light rounded mb-1">
+        Your Fav Color is : blue
+      </p>
+      <p *ngSwitchDefault class="bg-dark p-2 text-light rounded mb-1">
+        you don't have any fav colors
+      </p>
+    </ng-container>
+    <!-- 
+    <p class="bg-light mt-5 p-2" [style.color]="flag ? 'red' : 'green'">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel adipisci
+      consectetur nesciunt dolore illum unde voluptatibus ea, consequuntur autem
+      fugit ipsam omnis laboriosam laudantium dolorem non asperiores nulla,
+      quibusdam rem.
+    </p> -->
+    <!-- <p
+      class="bg-light mt-5 p-2"
+      [ngStyle]="{
+        color: flag ? 'green' : 'red',
+        fontSize: flag ? '30px' : '20px'
+      }"
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel adipisci
+      consectetur nesciunt dolore illum unde voluptatibus ea, consequuntur autem
+      fugit ipsam omnis laboriosam laudantium dolorem non asperiores nulla,
+      quibusdam rem.
+    </p> -->
+    <!-- <p class="mt-5 p-2" [class.successCase]="flag">
+      consectetur nesciunt dolore illum unde voluptatibus ea, consequuntur autem
+      fugit ipsam omnis laboriosam laudantium dolorem non asperiores nulla,
+      quibusdam rem.
+    </p> -->
+    <p
+      class="mt-5 p-2"
+      [ngClass]="{
+        'bg-light p-5': flag,
+        'bg-warning': !flag
+      }"
+    >
+      consectetur nesciunt dolore illum unde voluptatibus ea, consequuntur autem
+      fugit ipsam omnis laboriosam laudantium dolorem non asperiores nulla,
+      quibusdam rem.
+    </p>
+    <button (click)="toggle()" class="btn btn-outline-danger">Toggle</button>
+  </div>
+</div>

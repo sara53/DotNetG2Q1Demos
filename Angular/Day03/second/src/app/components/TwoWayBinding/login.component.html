@@ -1,0 +1,30 @@
+<div class="bg-dark p-5 text-center text-light">
+  <div class="container">
+    <h1 class="text-warning mb-4" #myh1>Login</h1>
+    <div class="row">
+      <div>
+        <input
+          #myInput
+          name="x"
+          type="text"
+          class="form-control"
+          placeholder="Enter Your Name"
+          [(ngModel)]="studentName"
+        />
+        <p class="mt-3 lead fs-3">
+          Student Name :<strong class="text-danger">{{ studentName }}</strong>
+        </p>
+        <select name="choose" [(ngModel)]="selectValue">
+          <option>Html</option>
+          <option>Css</option>
+          <option>JS</option>
+        </select>
+        <p class="mt-3 lead fs-3">Your Fav Course is : {{ selectValue }}</p>
+      </div>
+
+      <button class="btn btn-success" (click)="test(myInput.value)">
+        Click
+      </button>
+    </div>
+  </div>
+</div>

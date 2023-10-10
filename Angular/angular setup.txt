@@ -10,3 +10,6 @@
 ng g c component
 
 ng g c myFolder/footer --skip-tests
+
+--- 
+npm i bootstrap
