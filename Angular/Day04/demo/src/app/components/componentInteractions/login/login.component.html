@@ -1,0 +1,9 @@
+<div class="bg-dark text-light p-5 text-center">
+  <div class="container">
+    <h1>{{ componentTitle }}</h1>
+    <p class="bg-danger p-3 mt-3 rounded fs-4">{{ loginData }}</p>
+    <p *ngFor="let product of list" class="bg-secondary p-1 text-dark rounded">
+      {{ product.productName }}
+    </p>
+  </div>
+</div>
