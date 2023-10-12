@@ -1,0 +1,42 @@
+<div class="container mt-5">
+  <form (submit)="formOperation($event)">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Product Name</label>
+      <input
+        type="text"
+        name="productName"
+        placeholder="Enter Product Name"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        [(ngModel)]="productName"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Price</label>
+      <input
+        type="number"
+        name="price"
+        placeholder="Enter Product Price"
+        class="form-control"
+        id="exampleInputPassword1"
+        [(ngModel)]="price"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Quantity</label>
+      <input
+        type="number"
+        name="quantity"
+        placeholder="Enter Product quantity"
+        class="form-control"
+        id="exampleInputPassword1"
+        [(ngModel)]="quantity"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-dark">
+      {{ productId == 0 ? "Add New Product" : "Edit Product" }}
+    </button>
+  </form>
+</div>
